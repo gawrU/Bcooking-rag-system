@@ -17,3 +17,4 @@ Raw Data（食譜 / 網站）
 → Output
 
 Vector Database 採用 FAISS 單節點架構，所有向量儲存在本地記憶體中，以支援快速相似度搜尋。
+本系統透過提供檢索來源，使生成答案具備可追溯性（Explainability）。
