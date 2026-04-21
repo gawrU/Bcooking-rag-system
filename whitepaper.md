@@ -1,18 +1,43 @@
-# Whitepaper
+# Whitepaper - Cooking RAG System
 
-## Challenges
-- 食材名稱不同（番茄/西紅柿）
-- 模糊描述（少許）
-- 步驟順序重要
+## 1. Representation Challenges
 
-## Hallucination
-- 僅根據檢索回答
-- 使用Reranking
+料理知識轉換為向量表示面臨以下困難：
 
-## Cold Start
-- 定期更新資料
-
-## Ontology
-- 建立食材詞庫
+- 食材名稱不一致（番茄 / 西紅柿）
+- 模糊描述（適量、少許）
+- 步驟具有順序依賴
 
 料理知識具有高度語意依賴與上下文關聯，將其轉換為向量表示時需保留步驟順序與食材關係，這對embedding模型是一大挑戰。
+
+---
+
+## 2. Hallucination 解決方法
+
+- 僅根據檢索內容生成答案
+- 使用Reranking過濾不相關內容
+- 限制模型不得生成未檢索到的資訊
+
+---
+
+## 3. Cold Start 問題
+
+問題：
+新食譜或新食材缺乏資料。
+
+解法：
+- 定期更新資料庫
+- 使用外部資料來源（API）
+
+---
+
+## 4. 名詞對齊（Ontology）
+
+- 建立食材詞庫
+- 同義詞 mapping（洋蔥 = onion）
+
+---
+
+## Conclusion
+
+本系統透過RAG架構，將料理知識轉化為可檢索的向量表示，並結合語言模型生成具依據的料理建議，有效提升回答的準確性與可靠性。
