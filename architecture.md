@@ -15,3 +15,5 @@ Raw Data（食譜 / 網站）
 
 → LLM
 → Output
+
+Vector Database 採用 FAISS 單節點架構，所有向量儲存在本地記憶體中，以支援快速相似度搜尋。
